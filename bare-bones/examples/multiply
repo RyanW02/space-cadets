@@ -1,0 +1,23 @@
+print "Enter the first number:";
+input X;
+print "Enter the second number:";
+input Y;
+// Copy so we can access numbers later after they've been manipulated
+copy X first;
+copy Y second;
+// Do multiplication
+clear result;
+while X not 0 do;
+   clear W;
+   while Y not 0 do;
+      incr result;
+      incr W;
+      decr Y;
+   end;
+   while W not 0 do;
+      incr Y;
+      decr W;
+   end;
+   decr X;
+end;
+print "{first} x {second} = {result}";

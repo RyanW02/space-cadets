@@ -1,0 +1,32 @@
+procedure add
+    copy one X;
+    copy two Y;
+    clear result;
+
+    while Y != 0 do;
+        incr X;
+        decr Y;
+    end;
+    copy X result;
+end
+
+clear one;
+clear two;
+
+while 1 = 1 do;
+    print "Input the first number, or -1 to quit:";
+    input one;
+    if one < 0;
+        quit;
+    end;
+
+    print "Input the second number, or -1 to quit:";
+    input two;
+    if two < 0;
+        quit;
+    end;
+
+    call add;
+    print "{one} + {two} = {result}";
+    print "";
+end;
