@@ -58,33 +58,6 @@ public class Parser {
         return instructions;
     }
 
-    /*
-    private InstructionWithData parseLine(String line) {
-        String[] tokens = line.split(" ");
-
-        Instruction<?> instruction = getInstruction(tokens[0]);
-        if (instruction.getToken().equals("end")) {
-            return new InstructionWithData(instruction, new NoData());
-        }
-
-        // Remove semicolon - temp hack
-        String lastToken = tokens[tokens.length - 1];
-        lastToken = lastToken.substring(0, lastToken.length() - 1);
-        tokens[tokens.length - 1] = lastToken;
-
-        String[] subTokens = Arrays.copyOfRange(tokens, 1, tokens.length);
-
-        InstructionData data;
-        if (!instruction.hasBlock()) {
-            data = instruction.parse(subTokens, Collections.emptyList());
-        } else {
-            data = instruction.parse()
-        }
-
-        instructions.get(0).add(new InstructionWithData(instruction, data));
-    }
-     */
-
     private Instruction<?> getInstruction(String token) {
         return InstructionSet.INSTANCE.instructionSet.get(token);
     }
