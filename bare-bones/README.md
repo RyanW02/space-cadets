@@ -64,6 +64,12 @@ A lot of things are optional, such as semicolons and whitespace. Anything writte
 ignored too! e.g. `if x == 1 hello :)!` will still run fine.
 
 ## Instruction set
+### Calc
+Performs an arithmetic operation and stores the value. See [arithmetic operators](#arithmetic-operators) for available operators.
+```
+calc x = 3 + 4;
+```
+
 ### Call
 Calls a previously defined function (must be defined above the `call`).
 ```
@@ -162,3 +168,11 @@ The following operators are available for use in conditional statements:
 - `>=`
 - `<`, `lt`
 - `<=`
+
+## Arithmetic Operators
+The following operators are available for use in arithmetic operations:
+- `+`
+- `-`
+- `*`
+- `/`
+- `^`

@@ -19,4 +19,8 @@ public class VariableOperand extends Operand {
     public int getValue(State state) {
         return state.get(variableName);
     }
+
+    public String getVariableName() {
+        return variableName;
+    }
 }

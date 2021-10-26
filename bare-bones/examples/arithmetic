@@ -1,0 +1,17 @@
+calc x = 500 + 300;
+print "500 + 300 = {x}";
+
+calc y = x / 40;
+print "{x} / 40 = {y}";
+
+calc z = y * 2;
+print "{y} * 2 = {z}";
+
+calc w = z - 35;
+print "{z} - 35 = {w}";
+
+calc u = w % 3;
+print "{w} % 3 = {u}";
+
+calc p = u ^ 6;
+print "{u} ^ 6 = {p}";

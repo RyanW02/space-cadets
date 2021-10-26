@@ -13,6 +13,7 @@ public enum InstructionSet {
 
     public void init() {
         Arrays.asList(
+                new Calc(),
                 new Call(),
                 new Clear(),
                 new Copy(),
