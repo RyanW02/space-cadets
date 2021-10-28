@@ -1,9 +1,10 @@
 This is my implementation of Bare Bones.
 
 ## Features
-- If statements (no else yet 🙁)
+- If statements
 - While loops
 - Procedures
+- Scopes
 - Print strings, with formatting
 
 ## Example Code
@@ -148,6 +149,12 @@ Defines a subroutine that can be called later in the program. See [call](#call) 
 Quits the program.
 ```
 quit;
+```
+
+### Set
+Assigns an integer value to a variable.
+```
+set X 3;
 ```
 
 ### While

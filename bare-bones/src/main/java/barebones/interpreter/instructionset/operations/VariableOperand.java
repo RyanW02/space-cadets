@@ -1,6 +1,6 @@
 package barebones.interpreter.instructionset.operations;
 
-import barebones.interpreter.State;
+import barebones.interpreter.ScopeManager;
 
 public class VariableOperand extends Operand {
 
@@ -16,7 +16,7 @@ public class VariableOperand extends Operand {
     }
 
     @Override
-    public int getValue(State state) {
+    public int getValue(ScopeManager state) {
         return state.get(variableName);
     }
 

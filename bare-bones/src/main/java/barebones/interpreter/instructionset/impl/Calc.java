@@ -1,5 +1,6 @@
 package barebones.interpreter.instructionset.impl;
 
+import barebones.interpreter.ScopeManager;
 import barebones.interpreter.State;
 import barebones.interpreter.instructionset.Instruction;
 import barebones.interpreter.instructionset.InstructionData;
@@ -39,7 +40,7 @@ public class Calc extends Instruction<ArithmeticData> {
     }
 
     @Override
-    public void execute(State state, InstructionData iData) {
+    public void execute(ScopeManager state, InstructionData iData) {
         ArithmeticData data = (ArithmeticData) iData;
         int output = data.getOperator().calculate(data.getLhs().getValue(state), data.getRhs().getValue(state));
         state.set(data.getOutput().getVariableName(), output);

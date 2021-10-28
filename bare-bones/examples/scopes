@@ -1,0 +1,9 @@
+print "Setting X to 3 inside an inner scope";
+if 1 eq 1;
+    set X 3;
+    print "Inside scope, value of X = {X}";
+end;
+
+print "Exiting scope, now in outer scope";
+print "Incrementing X by 1, the following should throw an error, since X is no longer declared:"
+incr X;

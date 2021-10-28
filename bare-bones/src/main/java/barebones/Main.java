@@ -1,6 +1,7 @@
 package barebones;
 
 import barebones.interpreter.Parser;
+import barebones.interpreter.ScopeManager;
 import barebones.interpreter.State;
 import barebones.interpreter.instructionset.Instruction;
 import barebones.interpreter.instructionset.InstructionData;
@@ -33,9 +34,20 @@ public class Main {
         Parser parser = new Parser(code);
         List<InstructionWithData<?, ?>> instructions = parser.parse();
 
-        State state = new State();
+        ScopeManager scope = new ScopeManager();
+        scope.addBlankState();
+
         instructions.forEach((iwd) -> {
-            iwd.getInstruction().execute(state, iwd.getData());
+            boolean newScope = iwd.getInstruction().hasBlock();
+            if (newScope) {
+                scope.addBlankState();
+            }
+
+            iwd.getInstruction().execute(scope, iwd.getData());
+
+            if (newScope) {
+                scope.pop();
+            }
         });
     }
 

@@ -1,17 +1,16 @@
 package barebones.interpreter.instructionset.impl;
 
 import barebones.interpreter.ScopeManager;
-import barebones.interpreter.State;
 import barebones.interpreter.instructionset.Instruction;
 import barebones.interpreter.instructionset.InstructionData;
 import barebones.interpreter.instructionset.InstructionWithData;
 
 import java.util.List;
 
-public class Copy extends Instruction<Copy.Data> {
+public class Set extends Instruction<Set.Data> {
     @Override
     public String getToken() {
-        return "copy";
+        return "set";
     }
 
     @Override
@@ -21,29 +20,30 @@ public class Copy extends Instruction<Copy.Data> {
 
     @Override
     public Data parse(String[] tokens, List<InstructionWithData<?, ?>> blockInstructions) {
-        return new Data(tokens[0], tokens[1]);
+        return new Data(tokens[0], Integer.parseInt(tokens[1]));
     }
 
     @Override
     public void execute(ScopeManager state, InstructionData iData) {
         Data data = (Data) iData;
-        state.set(data.getTo(), state.get(data.getFrom()));
+        state.set(data.getVariableName(), data.getValue());
     }
 
     public static class Data extends InstructionData {
-        private final String from, to;
+        private final String variableName;
+        private final int value;
 
-        public Data(String from, String to) {
-            this.from = from;
-            this.to = to;
+        public Data(String from, int value) {
+            this.variableName = from;
+            this.value = value;
         }
 
-        public String getFrom() {
-            return from;
+        public String getVariableName() {
+            return variableName;
         }
 
-        public String getTo() {
-            return to;
+        public int getValue() {
+            return value;
         }
     }
 }

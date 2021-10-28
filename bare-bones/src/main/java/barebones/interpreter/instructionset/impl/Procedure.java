@@ -1,5 +1,6 @@
 package barebones.interpreter.instructionset.impl;
 
+import barebones.interpreter.ScopeManager;
 import barebones.interpreter.State;
 import barebones.interpreter.instructionset.Instruction;
 import barebones.interpreter.instructionset.InstructionData;
@@ -31,7 +32,7 @@ public class Procedure extends Instruction<Procedure.Data> {
     }
 
     @Override
-    public void execute(State state, InstructionData iData) {
+    public void execute(ScopeManager state, InstructionData iData) {
         Data data = (Data) iData;
         state.createProcedure(data);
     }
@@ -45,7 +46,7 @@ public class Procedure extends Instruction<Procedure.Data> {
             this.name = name;
         }
 
-        public void execute(State state) {
+        public void execute(ScopeManager state) {
             getBlockInstructions().forEach((iwd) -> {
                 iwd.getInstruction().execute(state, iwd.getData());
             });

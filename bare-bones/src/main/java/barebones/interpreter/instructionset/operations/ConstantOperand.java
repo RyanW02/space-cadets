@@ -1,6 +1,6 @@
 package barebones.interpreter.instructionset.operations;
 
-import barebones.interpreter.State;
+import barebones.interpreter.ScopeManager;
 
 public class ConstantOperand extends Operand {
 
@@ -16,7 +16,7 @@ public class ConstantOperand extends Operand {
     }
 
     @Override
-    public int getValue(State state) {
+    public int getValue(ScopeManager state) {
         return this.value;
     }
 }

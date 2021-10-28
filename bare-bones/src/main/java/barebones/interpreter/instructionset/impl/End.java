@@ -1,5 +1,6 @@
 package barebones.interpreter.instructionset.impl;
 
+import barebones.interpreter.ScopeManager;
 import barebones.interpreter.State;
 import barebones.interpreter.instructionset.Instruction;
 import barebones.interpreter.instructionset.InstructionData;
@@ -25,7 +26,7 @@ public class End extends Instruction<NoData> {
     }
 
     @Override
-    public void execute(State state, InstructionData iData) {
+    public void execute(ScopeManager state, InstructionData iData) {
         throw new IllegalStateException("end cannot be executed");
     }
 }

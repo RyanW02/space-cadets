@@ -6,11 +6,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class State {
-    // All variables are global... for now
     private Map<String, Integer> memory = new HashMap<String, Integer>();
     private Map<String, Procedure.Data> procedures = new HashMap<>();
 
-    public int get(String name) {
+    public Integer get(String name) {
         return memory.get(name);
     }
 

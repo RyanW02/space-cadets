@@ -25,6 +25,7 @@ public enum InstructionSet {
                 new Print(),
                 new Procedure(),
                 new Quit(),
+                new Set(),
                 new While()
         ).forEach((i) -> instructionSet.put(i.getToken(), i));
     }

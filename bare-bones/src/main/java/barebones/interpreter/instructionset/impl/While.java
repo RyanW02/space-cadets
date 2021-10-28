@@ -1,5 +1,6 @@
 package barebones.interpreter.instructionset.impl;
 
+import barebones.interpreter.ScopeManager;
 import barebones.interpreter.State;
 import barebones.interpreter.instructionset.Instruction;
 import barebones.interpreter.instructionset.InstructionData;
@@ -52,7 +53,7 @@ public class While extends Instruction<ComparisonData> {
     }
 
     @Override
-    public void execute(State state, InstructionData iData) {
+    public void execute(ScopeManager state, InstructionData iData) {
         ComparisonData data = (ComparisonData) iData;
 
         while (data.getOperator().compare(data.getLhs().getValue(state), data.getRhs().getValue(state))) {

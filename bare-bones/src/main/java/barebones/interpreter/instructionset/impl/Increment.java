@@ -1,5 +1,6 @@
 package barebones.interpreter.instructionset.impl;
 
+import barebones.interpreter.ScopeManager;
 import barebones.interpreter.State;
 import barebones.interpreter.instructionset.Instruction;
 import barebones.interpreter.instructionset.InstructionData;
@@ -26,7 +27,7 @@ public class Increment extends Instruction<NameData> {
     }
 
     @Override
-    public void execute(State state, InstructionData iData) {
+    public void execute(ScopeManager state, InstructionData iData) {
         NameData data = (NameData) iData;
         int current = state.get(data.getName());
         state.set(data.getName(), current + 1);
