@@ -2,16 +2,10 @@ package barebones;
 
 import barebones.interpreter.Parser;
 import barebones.interpreter.ScopeManager;
-import barebones.interpreter.State;
-import barebones.interpreter.instructionset.Instruction;
-import barebones.interpreter.instructionset.InstructionData;
 import barebones.interpreter.instructionset.InstructionSet;
 import barebones.interpreter.instructionset.InstructionWithData;
-import barebones.interpreter.instructionset.impl.Clear;
-import barebones.interpreter.instructionset.impl.Increment;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
